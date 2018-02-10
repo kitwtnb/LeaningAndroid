@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DroidKaigi2018Contributors</string>
+    <string name="service_url">http://randomuser.me/</string>
 </resources>
