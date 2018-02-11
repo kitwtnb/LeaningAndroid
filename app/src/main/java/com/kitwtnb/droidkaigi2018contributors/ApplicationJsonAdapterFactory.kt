@@ -1,0 +1,6 @@
+package com.kitwtnb.droidkaigi2018contributors
+
+import se.ansman.kotshi.KotshiJsonAdapterFactory
+
+@KotshiJsonAdapterFactory
+object ApplicationJsonAdapterFactory : KotshiApplicationJsonAdapterFactory()
