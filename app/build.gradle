@@ -1,17 +1,15 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion versions.compileSdkVersion
     defaultConfig {
         applicationId "com.kitwtnb.droidkaigi2018contributors"
-        minSdkVersion 21
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+        versionCode versions.versionCode
+        versionName versions.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,22 +22,34 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'org.koin:koin-android:0.8.2'
-    implementation 'com.jakewharton.timber:timber:4.6.0'
-    implementation "io.reactivex.rxjava2:rxjava:2.1.9"
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-moshi:2.3.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.9.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
-    implementation 'com.squareup.moshi:moshi:1.5.0'
-    implementation 'com.squareup.moshi:moshi-kotlin:1.5.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation depends.kotlin
+
+    // ===================  Support Library  ===================
+    implementation depends.support.appcompat
+    implementation depends.support.constraint
+
+    // ===================  DI Container  ======================
+    implementation depends.koin
+
+    // ===================  Observer  ==========================
+    implementation depends.rxjava2.core
+    implementation depends.rxjava2.kotlin
+    implementation depends.rxjava2.android
+
+    // ===================  Network  ===========================
+    implementation depends.moshi.core
+    implementation depends.moshi.kotlin
+    implementation depends.okhttp.core
+    implementation depends.okhttp.loggingInterceptor
+    implementation depends.retrofit2.core
+    implementation depends.retrofit2.adapterRxJava2
+    implementation depends.retrofit2.converterMoshi
+
+    // ===================  Debug  =============================
+    implementation depends.timber
+
+    // ===================  Test  ==============================
+    testImplementation depends.junit
+    androidTestImplementation depends.supporttest.runner
+    androidTestImplementation depends.supporttest.espresso
 }

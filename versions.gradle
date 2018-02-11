@@ -1,0 +1,43 @@
+ext {
+    versions = [
+            // ===================  Application  =======================
+            compileSdkVersion: 26,
+            minSdkVersion: 21,
+            targetSdkVersion: 26,
+            versionCode: 1,
+            versionName: "1.0",
+            gradle: "3.0.1",
+            kotlin: "1.2.21",
+
+            // ===================  Support Library  ===================
+            support: [
+                    appcompat:  "26.1.0",
+                    constraint: "1.0.2",
+            ],
+
+            // ===================  DI Container  ======================
+            koin: "0.8.2",
+
+            // ===================  Observer  ==========================
+            rxjava2: [
+                    core:    "2.1.9",
+                    kotlin:  "2.2.0",
+                    android: "2.0.1",
+            ],
+
+            // ===================  Network  ===========================
+            moshi:     "1.5.0",
+            okhttp:    "3.9.1",
+            retrofit2: "2.3.0",
+
+            // ===================  Debug  =============================
+            timber: "4.6.0",
+
+            // ===================  Test  ==============================
+            junit: "4.12",
+            supporttest: [
+                    runner:   "1.0.1",
+                    espresso: "3.0.1",
+            ],
+    ]
+}
