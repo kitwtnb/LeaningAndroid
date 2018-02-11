@@ -2,10 +2,10 @@ package com.kitwtnb.droidkaigi2018contributors.di
 
 import android.content.Context
 import com.kitwtnb.droidkaigi2018contributors.ApiService
+import com.kitwtnb.droidkaigi2018contributors.ApplicationJsonAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.Contributor
 import com.kitwtnb.droidkaigi2018contributors.ContributorImpl
 import com.kitwtnb.droidkaigi2018contributors.R
-import com.squareup.moshi.KotlinJsonAdapterFactory
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,7 +24,7 @@ fun getModule(context: Context) = applicationContext {
      */
     provide<Moshi> {
         Moshi.Builder()
-             .add(KotlinJsonAdapterFactory())
+             .add(ApplicationJsonAdapterFactory)
              .build()
     }
     provide<OkHttpClient> {

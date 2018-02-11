@@ -1,5 +1,8 @@
 package com.kitwtnb.droidkaigi2018contributors
 
+import se.ansman.kotshi.JsonSerializable
+
+@JsonSerializable
 data class RandomUser(var info: Info,
                       var results: List<Result>)
 
