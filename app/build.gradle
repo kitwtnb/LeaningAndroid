@@ -5,6 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion versions.compileSdkVersion
+    dataBinding.enabled = true
     defaultConfig {
         applicationId "com.kitwtnb.droidkaigi2018contributors"
         minSdkVersion versions.minSdkVersion
@@ -22,8 +23,10 @@ android {
 }
 
 dependencies {
+    // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation depends.kotlin
+    kapt depends.databinding
 
     // ===================  Support Library  ===================
     implementation depends.support.appcompat

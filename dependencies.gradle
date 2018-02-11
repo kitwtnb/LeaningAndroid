@@ -1,6 +1,8 @@
 ext {
     depends = [
-            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+            // ===================  Application  =======================
+            kotlin:      "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+            databinding: "com.android.databinding:compiler:$versions.databinding",
 
             // ===================  Support Library  ===================
             support: [
