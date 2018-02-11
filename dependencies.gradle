@@ -19,9 +19,9 @@ ext {
             ],
 
             // ===================  Network  ===========================
-            moshi: [
-                    core: "com.squareup.moshi:moshi:$versions.moshi",
-                    kotlin: "com.squareup.moshi:moshi-kotlin:$versions.moshi",
+            kotshi: [
+                    api:      "se.ansman.kotshi:api:$versions.kotshi",
+                    compiler: "se.ansman.kotshi:compiler:$versions.kotshi",
             ],
             okhttp: [
                     core:               "com.squareup.okhttp3:okhttp:$versions.okhttp",

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
@@ -37,8 +38,8 @@ dependencies {
     implementation depends.rxjava2.android
 
     // ===================  Network  ===========================
-    implementation depends.moshi.core
-    implementation depends.moshi.kotlin
+    implementation depends.kotshi.api
+    kapt depends.kotshi.compiler
     implementation depends.okhttp.core
     implementation depends.okhttp.loggingInterceptor
     implementation depends.retrofit2.core
