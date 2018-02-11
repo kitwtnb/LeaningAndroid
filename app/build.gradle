@@ -25,20 +25,44 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation depends.kotlin
+
+    /**
+     * Support Library
+     */
     implementation depends.support.appcompat
     implementation depends.support.constraint
+
+    /**
+     * DI Container
+     */
     implementation depends.koin
-    implementation depends.timber
+
+    /**
+     * Observer
+     */
     implementation depends.rxjava2.core
     implementation depends.rxjava2.kotlin
     implementation depends.rxjava2.android
+
+    /**
+     * Network
+     */
+    implementation depends.moshi.core
+    implementation depends.moshi.kotlin
+    implementation depends.okhttp.core
+    implementation depends.okhttp.loggingInterceptor
     implementation depends.retrofit2.core
     implementation depends.retrofit2.adapterRxJava2
     implementation depends.retrofit2.converterMoshi
-    implementation depends.okhttp.core
-    implementation depends.okhttp.loggingInterceptor
-    implementation depends.moshi.core
-    implementation depends.moshi.kotlin
+
+    /**
+     * Debug
+     */
+    implementation depends.timber
+
+    /**
+     * Test
+     */
     testImplementation depends.junit
     androidTestImplementation depends.supporttest.runner
     androidTestImplementation depends.supporttest.espresso
