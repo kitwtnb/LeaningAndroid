@@ -2,6 +2,8 @@
 
 buildscript {
     apply from: "${rootDir.absolutePath}/versions.gradle"
+    apply from: "${rootDir.absolutePath}/dependencies.gradle"
+
     repositories {
         google()
         jcenter()

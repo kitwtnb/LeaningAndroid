@@ -1,0 +1,58 @@
+ext {
+    depends = [
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+
+            /**
+             * Support Library
+             */
+            support: [
+                    appcompat:  "com.android.support:appcompat-v7:$versions.support.appcompat",
+                    constraint: "com.android.support.constraint:constraint-layout:$versions.support.constraint",
+            ],
+
+            /**
+             * DI Container
+             */
+            koin: "org.koin:koin-android:$versions.koin",
+
+            /**
+             * Observer
+             */
+            rxjava2: [
+                    core:    "io.reactivex.rxjava2:rxjava:$versions.rxjava2.core",
+                    kotlin:  "io.reactivex.rxjava2:rxkotlin:$versions.rxjava2.kotlin",
+                    android: "io.reactivex.rxjava2:rxandroid:$versions.rxjava2.android",
+            ],
+
+            /**
+             * Network
+             */
+            moshi: [
+                    core: "com.squareup.moshi:moshi:$versions.moshi",
+                    kotlin: "com.squareup.moshi:moshi-kotlin:$versions.moshi",
+            ],
+            okhttp: [
+                    core:               "com.squareup.okhttp3:okhttp:$versions.okhttp",
+                    loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okhttp",
+            ],
+            retrofit2: [
+                    core:           "com.squareup.retrofit2:retrofit:$versions.retrofit2",
+                    adapterRxJava2: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit2",
+                    converterMoshi: "com.squareup.retrofit2:converter-moshi:$versions.retrofit2",
+            ],
+
+            /**
+             * Debug
+             */
+            timber: "com.jakewharton.timber:timber:$versions.timber",
+
+            /**
+             * Test
+             */
+            junit: "junit:junit:$versions.junit",
+            supporttest: [
+                    runner:   "com.android.support.test:runner:$versions.supporttest.runner",
+                    espresso: "com.android.support.test.espresso:espresso-core:$versions.supporttest.espresso",
+            ],
+    ]
+}
