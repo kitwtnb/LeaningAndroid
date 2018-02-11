@@ -2,31 +2,23 @@ ext {
     depends = [
             kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
 
-            /**
-             * Support Library
-             */
+            // ===================  Support Library  ===================
             support: [
                     appcompat:  "com.android.support:appcompat-v7:$versions.support.appcompat",
                     constraint: "com.android.support.constraint:constraint-layout:$versions.support.constraint",
             ],
 
-            /**
-             * DI Container
-             */
+            // ===================  DI Container  ======================
             koin: "org.koin:koin-android:$versions.koin",
 
-            /**
-             * Observer
-             */
+            // ===================  Observer  ==========================
             rxjava2: [
                     core:    "io.reactivex.rxjava2:rxjava:$versions.rxjava2.core",
                     kotlin:  "io.reactivex.rxjava2:rxkotlin:$versions.rxjava2.kotlin",
                     android: "io.reactivex.rxjava2:rxandroid:$versions.rxjava2.android",
             ],
 
-            /**
-             * Network
-             */
+            // ===================  Network  ===========================
             moshi: [
                     core: "com.squareup.moshi:moshi:$versions.moshi",
                     kotlin: "com.squareup.moshi:moshi-kotlin:$versions.moshi",
@@ -41,14 +33,10 @@ ext {
                     converterMoshi: "com.squareup.retrofit2:converter-moshi:$versions.retrofit2",
             ],
 
-            /**
-             * Debug
-             */
+            // ===================  Debug  =============================
             timber: "com.jakewharton.timber:timber:$versions.timber",
 
-            /**
-             * Test
-             */
+            // ===================  Test  ==============================
             junit: "junit:junit:$versions.junit",
             supporttest: [
                     runner:   "com.android.support.test:runner:$versions.supporttest.runner",
