@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.crashlytics.android.Crashlytics
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityMainBinding
 import io.reactivex.rxkotlin.subscribeBy
@@ -25,10 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         binding.text.text = contributor.name()
-        binding.button.setOnClickListener {
-            val intent = Intent(this, OssLicensesMenuActivity::class.java)
-            startActivity(intent)
-        }
+        binding.button.setOnClickListener { Crashlytics.getInstance().crash() }
         api.randomUser.subscribeBy(
             onSuccess = { Timber.i(it.toString()) },
             onError = { Timber.e(it) }
