@@ -11,6 +11,10 @@
         android:layout_height="match_parent"
         tools:context="com.kitwtnb.droidkaigi2018contributors.MainActivity">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Toolbar" />
+
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
