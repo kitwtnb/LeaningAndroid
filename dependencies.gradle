@@ -3,6 +3,7 @@ ext {
             // ===================  Application  =======================
             kotlin:      "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
             databinding: "com.android.databinding:compiler:$versions.databinding",
+            firebase:    "com.google.firebase:firebase-core:$versions.firebase",
 
             // ===================  Support Library  ===================
             support: [
@@ -39,7 +40,8 @@ ext {
             playServicesOssLicenses: "com.google.android.gms:play-services-oss-licenses:$versions.gms.playServicesOssLicenses",
 
             // ===================  Debug  =============================
-            timber: "com.jakewharton.timber:timber:$versions.timber",
+            crashlytics: "com.crashlytics.sdk.android:crashlytics:${versions.crashlytics}@aar",
+            timber:      "com.jakewharton.timber:timber:$versions.timber",
             leakcanary: [
                     debug:   "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary",
                     release: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary",
