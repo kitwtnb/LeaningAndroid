@@ -2,13 +2,16 @@ ext {
     versions = [
             // ===================  Application  =======================
             compileSdkVersion: 26,
-            minSdkVersion: 21,
-            targetSdkVersion: 26,
-            versionCode: 1,
-            versionName: "1.0",
-            gradle: "3.0.1",
-            kotlin: "1.2.21",
-            databinding: "3.0.1",
+            minSdkVersion:     21,
+            targetSdkVersion:  26,
+            versionCode:       1,
+            versionName:       "1.0",
+            gradle:            "3.0.1",
+            kotlin:            "1.2.21",
+            databinding:       "3.0.1",
+            firebase:          "11.8.0",
+            googleServices:    "3.1.1",
+            fabricGradle:      "1.25.1",
 
             // ===================  Support Library  ===================
             support: [
@@ -34,12 +37,13 @@ ext {
             // ===================  UI  ================================
             gms: [
                     ossLicenses:             "0.9.1",
-                    playServicesOssLicenses: "11.6.0",
+                    playServicesOssLicenses: "11.8.0",
             ],
 
             // ===================  Debug  =============================
-            timber: "4.6.0",
-            leakcanary: "1.5.4",
+            crashlytics: "2.7.1",
+            timber:      "4.6.0",
+            leakcanary:  "1.5.4",
 
             // ===================  Test  ==============================
             junit: "4.12",
