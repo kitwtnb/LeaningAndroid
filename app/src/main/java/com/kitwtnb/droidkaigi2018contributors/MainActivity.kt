@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setSupportActionBar(binding.toolbar)
         binding.text.text = contributor.name()
         binding.button.setOnClickListener {
             val intent = Intent(this, OssLicensesMenuActivity::class.java)
