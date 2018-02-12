@@ -13,3 +13,6 @@ app/src/main/res/raw/third_party_licenses
 !.idea/codeStyleSettings.xml
 !.idea/icon.png
 !.idea/icon_dark.png
+
+# Firebase settings
+google-services.json
