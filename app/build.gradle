@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.gms.oss.licenses.plugin'
 
 android {
     compileSdkVersion versions.compileSdkVersion
@@ -48,6 +49,9 @@ dependencies {
     implementation depends.retrofit2.core
     implementation depends.retrofit2.adapterRxJava2
     implementation depends.retrofit2.converterMoshi
+
+    // ===================  UI  ================================
+    implementation depends.playServicesOssLicenses
 
     // ===================  Debug  =============================
     implementation depends.timber

@@ -35,6 +35,9 @@ ext {
                     converterMoshi: "com.squareup.retrofit2:converter-moshi:$versions.retrofit2",
             ],
 
+            // ===================  UI  ================================
+            playServicesOssLicenses: "com.google.android.gms:play-services-oss-licenses:$versions.gms.playServicesOssLicenses",
+
             // ===================  Debug  =============================
             timber: "com.jakewharton.timber:timber:$versions.timber",
 
