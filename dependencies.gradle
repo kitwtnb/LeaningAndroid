@@ -40,6 +40,10 @@ ext {
 
             // ===================  Debug  =============================
             timber: "com.jakewharton.timber:timber:$versions.timber",
+            leakcanary: [
+                    debug:   "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary",
+                    release: "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary",
+            ],
 
             // ===================  Test  ==============================
             junit: "junit:junit:$versions.junit",

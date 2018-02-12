@@ -55,6 +55,8 @@ dependencies {
 
     // ===================  Debug  =============================
     implementation depends.timber
+    debugImplementation depends.leakcanary.debug
+    releaseImplementation depends.leakcanary.release
 
     // ===================  Test  ==============================
     testImplementation depends.junit
