@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.oss.licenses.plugin'
 
 android {
@@ -26,6 +27,7 @@ android {
 dependencies {
     // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation depends.firebase
     implementation depends.kotlin
     kapt depends.databinding
 
@@ -54,6 +56,9 @@ dependencies {
     implementation depends.playServicesOssLicenses
 
     // ===================  Debug  =============================
+    implementation(depends.crashlytics) {
+        transitive = true
+    }
     implementation depends.timber
     debugImplementation depends.leakcanary.debug
     releaseImplementation depends.leakcanary.release
@@ -74,3 +79,5 @@ configurations.all { config ->
         }
     }
 }
+
+apply plugin: 'com.google.gms.google-services'
