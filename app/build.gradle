@@ -29,7 +29,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation depends.firebase
     implementation depends.kotlin
-    kapt depends.databinding
 
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
