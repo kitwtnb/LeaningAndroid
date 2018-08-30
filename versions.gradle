@@ -6,12 +6,11 @@ ext {
             targetSdkVersion:  26,
             versionCode:       1,
             versionName:       "1.0",
-            gradle:            "3.0.1",
-            kotlin:            "1.2.21",
-            databinding:       "3.0.1",
-            firebase:          "11.8.0",
-            googleServices:    "3.1.1",
-            fabricGradle:      "1.25.1",
+            gradle:            "3.1.4",
+            kotlin:            "1.2.61",
+            firebase:          "16.0.3",
+            googleServices:    "4.1.0",
+            fabricGradle:      "1.25.4",
 
             // ===================  Support Library  ===================
             support: [
