@@ -8,6 +8,7 @@ ext {
             versionName:       "1.0",
             gradle:            "3.1.4",
             kotlin:            "1.2.61",
+            coroutine:         "0.21",
             firebase:          "16.0.3",
             googleServices:    "4.1.0",
             fabricGradle:      "1.25.4",
