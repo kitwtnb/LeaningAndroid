@@ -2,6 +2,10 @@ ext {
     depends = [
             // ===================  Application  =======================
             kotlin:      "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+            coroutine: [
+                    core:    "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine",
+                    android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+            ],
             firebase:    "com.google.firebase:firebase-core:$versions.firebase",
 
             // ===================  Support Library  ===================

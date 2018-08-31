@@ -29,6 +29,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation depends.firebase
     implementation depends.kotlin
+    implementation depends.coroutine.core
+    implementation depends.coroutine.android
 
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
