@@ -50,7 +50,7 @@ dependencies {
     implementation depends.okhttp.core
     implementation depends.okhttp.loggingInterceptor
     implementation depends.retrofit2.core
-    implementation depends.retrofit2.adapterRxJava2
+    implementation depends.retrofit2.adapterCoroutine
     implementation depends.retrofit2.converterMoshi
 
     // ===================  UI  ================================

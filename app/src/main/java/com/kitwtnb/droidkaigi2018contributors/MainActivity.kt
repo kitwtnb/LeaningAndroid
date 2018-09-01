@@ -9,7 +9,8 @@ import android.view.MenuItem
 import com.crashlytics.android.Crashlytics
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityMainBinding
-import io.reactivex.rxkotlin.subscribeBy
+import kotlinx.coroutines.experimental.android.UI
+import kotlinx.coroutines.experimental.launch
 import org.koin.android.ext.android.inject
 import timber.log.Timber
 
@@ -27,10 +28,14 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         binding.text.text = contributor.name()
         binding.button.setOnClickListener { Crashlytics.getInstance().crash() }
-        api.randomUser.subscribeBy(
-            onSuccess = { Timber.i(it.toString()) },
-            onError = { Timber.e(it) }
-        )
+
+        launch(UI) {
+            try {
+                api.randomUser.await().let { Timber.i(it.toString()) }
+            } catch (t: Throwable) {
+                Timber.e(t)
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
