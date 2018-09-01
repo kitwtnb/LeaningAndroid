@@ -13,6 +13,9 @@ ext {
             googleServices:    "4.1.0",
             fabricGradle:      "1.25.4",
 
+            // ===================  Architecture Components  ===========
+            architectureComponents: "1.1.1",
+
             // ===================  Support Library  ===================
             support: [
                     appcompat:  "26.1.0",
