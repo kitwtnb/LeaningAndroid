@@ -40,7 +40,8 @@ dependencies {
     implementation depends.support.constraint
 
     // ===================  DI Container  ======================
-    implementation depends.koin
+    implementation depends.koin.android
+    implementation depends.koin.architectureComponents
 
     // ===================  Observer  ==========================
     implementation depends.rxjava2.core

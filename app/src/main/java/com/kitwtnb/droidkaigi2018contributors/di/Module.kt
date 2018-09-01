@@ -7,9 +7,11 @@ import com.kitwtnb.droidkaigi2018contributors.ApplicationJsonAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.Contributor
 import com.kitwtnb.droidkaigi2018contributors.ContributorImpl
 import com.kitwtnb.droidkaigi2018contributors.R
+import com.kitwtnb.droidkaigi2018contributors.MainViewModel
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.applicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -17,6 +19,8 @@ import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 fun getModule(context: Context) = applicationContext {
+    viewModel { MainViewModel() }
+
     factory<Contributor> { ContributorImpl() }
 
     /**

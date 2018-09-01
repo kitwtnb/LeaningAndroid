@@ -14,6 +14,7 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityMainBinding
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
+import org.koin.android.architecture.ext.viewModel
 import org.koin.android.ext.android.inject
 import timber.log.Timber
 
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
     }
 
+    private val viewModel: MainViewModel by viewModel()
     private val contributor: Contributor by inject()
     private val api: ApiService by inject()
 
@@ -40,7 +42,6 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel.text.observe(this, Observer {
             findViewById<TextView>(R.id.text).text = it
         })

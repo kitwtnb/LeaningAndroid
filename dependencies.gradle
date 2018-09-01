@@ -20,7 +20,10 @@ ext {
             ],
 
             // ===================  DI Container  ======================
-            koin: "org.koin:koin-android:$versions.koin",
+            koin: [
+                    android:                "org.koin:koin-android:$versions.koin",
+                    architectureComponents: "org.koin:koin-android-architecture:$versions.koin"
+            ],
 
             // ===================  Observer  ==========================
             rxjava2: [
