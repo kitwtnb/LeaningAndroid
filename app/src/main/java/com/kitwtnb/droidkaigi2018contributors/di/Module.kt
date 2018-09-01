@@ -1,6 +1,7 @@
 package com.kitwtnb.droidkaigi2018contributors.di
 
 import android.content.Context
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.ApiService
 import com.kitwtnb.droidkaigi2018contributors.ApplicationJsonAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.Contributor
@@ -11,7 +12,6 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module.applicationContext
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
@@ -41,7 +41,7 @@ fun getModule(context: Context) = applicationContext {
     provide<Retrofit> {
         Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create(get()))
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.createAsync())
+                .addCallAdapterFactory(CoroutineCallAdapterFactory())
                 .baseUrl(context.getString(R.string.service_url))
                 .client(get())
                 .build()

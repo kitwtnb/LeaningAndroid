@@ -13,7 +13,13 @@ data class Info(var seed: String,
 
 data class Result(var gender: String,
                   var email: String,
-                  var registered: String,
-                  var dob: String,
+                  var registered: Registered,
+                  var dob: Dob,
                   var phone: String,
                   var cell: String)
+
+data class Registered(val date: String,
+                      val age: Int)
+
+data class Dob(val date: String,
+               val age: Int)

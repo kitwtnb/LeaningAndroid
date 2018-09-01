@@ -8,6 +8,7 @@ ext {
             versionName:       "1.0",
             gradle:            "3.1.4",
             kotlin:            "1.2.61",
+            coroutine:         "0.21",
             firebase:          "16.0.3",
             googleServices:    "4.1.0",
             fabricGradle:      "1.25.4",
@@ -31,7 +32,10 @@ ext {
             // ===================  Network  ===========================
             kotshi:    "1.0.0",
             okhttp:    "3.9.1",
-            retrofit2: "2.3.0",
+            retrofit2: [
+                    core: "2.4.0",
+                    adapterCoroutine: "1.0.0"
+            ],
 
             // ===================  UI  ================================
             gms: [
