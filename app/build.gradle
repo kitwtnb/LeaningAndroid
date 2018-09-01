@@ -32,6 +32,9 @@ dependencies {
     implementation depends.coroutine.core
     implementation depends.coroutine.android
 
+    // ===================  Architecture Components  ===========
+    implementation depends.architectureComponents.extensions
+
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
     implementation depends.support.constraint
