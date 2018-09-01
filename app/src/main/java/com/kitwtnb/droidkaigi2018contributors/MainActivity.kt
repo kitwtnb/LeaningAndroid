@@ -1,11 +1,14 @@
 package com.kitwtnb.droidkaigi2018contributors
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import com.crashlytics.android.Crashlytics
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityMainBinding
@@ -36,6 +39,11 @@ class MainActivity : AppCompatActivity() {
                 Timber.e(t)
             }
         }
+
+        val viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel.text.observe(this, Observer {
+            findViewById<TextView>(R.id.text).text = it
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
