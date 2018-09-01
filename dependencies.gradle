@@ -2,6 +2,10 @@ ext {
     depends = [
             // ===================  Application  =======================
             kotlin:      "org.jetbrains.kotlin:kotlin-stdlib-jre7:$versions.kotlin",
+            coroutine: [
+                    core:    "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutine",
+                    android: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutine"
+            ],
             firebase:    "com.google.firebase:firebase-core:$versions.firebase",
 
             // ===================  Support Library  ===================
@@ -30,9 +34,9 @@ ext {
                     loggingInterceptor: "com.squareup.okhttp3:logging-interceptor:$versions.okhttp",
             ],
             retrofit2: [
-                    core:           "com.squareup.retrofit2:retrofit:$versions.retrofit2",
-                    adapterRxJava2: "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit2",
-                    converterMoshi: "com.squareup.retrofit2:converter-moshi:$versions.retrofit2",
+                    core:             "com.squareup.retrofit2:retrofit:$versions.retrofit2.core",
+                    adapterCoroutine: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofit2.adapterCoroutine",
+                    converterMoshi:   "com.squareup.retrofit2:converter-moshi:$versions.retrofit2.core",
             ],
 
             // ===================  UI  ================================

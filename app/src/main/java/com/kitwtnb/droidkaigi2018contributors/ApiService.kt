@@ -1,9 +1,9 @@
 package com.kitwtnb.droidkaigi2018contributors
 
-import io.reactivex.Single
+import kotlinx.coroutines.experimental.Deferred
 import retrofit2.http.GET
 
 interface ApiService {
     @get:GET("api")
-    val randomUser: Single<RandomUser>
+    val randomUser: Deferred<RandomUser>
 }
