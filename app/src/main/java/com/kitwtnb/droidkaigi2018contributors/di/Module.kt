@@ -4,8 +4,6 @@ import android.content.Context
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.ApiService
 import com.kitwtnb.droidkaigi2018contributors.ApplicationJsonAdapterFactory
-import com.kitwtnb.droidkaigi2018contributors.Contributor
-import com.kitwtnb.droidkaigi2018contributors.ContributorImpl
 import com.kitwtnb.droidkaigi2018contributors.R
 import com.kitwtnb.droidkaigi2018contributors.MainViewModel
 import com.squareup.moshi.Moshi
@@ -20,8 +18,6 @@ import java.util.concurrent.TimeUnit
 
 fun getModule(context: Context) = applicationContext {
     viewModel { MainViewModel(get()) }
-
-    factory<Contributor> { ContributorImpl() }
 
     /**
      * Network
