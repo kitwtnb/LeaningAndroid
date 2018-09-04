@@ -32,12 +32,16 @@ dependencies {
     implementation depends.coroutine.core
     implementation depends.coroutine.android
 
+    // ===================  Architecture Components  ===========
+    implementation depends.architectureComponents.extensions
+
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
     implementation depends.support.constraint
 
     // ===================  DI Container  ======================
-    implementation depends.koin
+    implementation depends.koin.android
+    implementation depends.koin.architectureComponents
 
     // ===================  Observer  ==========================
     implementation depends.rxjava2.core

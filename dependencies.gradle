@@ -8,6 +8,11 @@ ext {
             ],
             firebase:    "com.google.firebase:firebase-core:$versions.firebase",
 
+            // ===================  Architecture Components  ===========
+            architectureComponents: [
+                    extensions: "android.arch.lifecycle:extensions:$versions.architectureComponents"
+            ],
+
             // ===================  Support Library  ===================
             support: [
                     appcompat:  "com.android.support:appcompat-v7:$versions.support.appcompat",
@@ -15,7 +20,10 @@ ext {
             ],
 
             // ===================  DI Container  ======================
-            koin: "org.koin:koin-android:$versions.koin",
+            koin: [
+                    android:                "org.koin:koin-android:$versions.koin",
+                    architectureComponents: "org.koin:koin-android-architecture:$versions.koin"
+            ],
 
             // ===================  Observer  ==========================
             rxjava2: [
