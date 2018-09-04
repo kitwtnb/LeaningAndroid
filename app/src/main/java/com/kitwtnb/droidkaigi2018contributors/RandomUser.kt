@@ -12,11 +12,16 @@ data class Info(var seed: String,
                 var version: String)
 
 data class Result(var gender: String,
+                  var name: Name,
                   var email: String,
                   var registered: Registered,
                   var dob: Dob,
                   var phone: String,
                   var cell: String)
+
+data class Name(val title: String,
+                val first: String,
+                val last: String)
 
 data class Registered(val date: String,
                       val age: Int)

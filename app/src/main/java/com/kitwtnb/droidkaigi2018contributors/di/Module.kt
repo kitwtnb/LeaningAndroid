@@ -19,7 +19,7 @@ import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 fun getModule(context: Context) = applicationContext {
-    viewModel { MainViewModel() }
+    viewModel { MainViewModel(get()) }
 
     factory<Contributor> { ContributorImpl() }
 
