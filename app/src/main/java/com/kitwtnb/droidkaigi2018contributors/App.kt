@@ -2,6 +2,7 @@ package com.kitwtnb.droidkaigi2018contributors
 
 import android.app.Application
 import com.kitwtnb.droidkaigi2018contributors.di.getModule
+import com.kitwtnb.droidkaigi2018contributors.di.jsonMapperModule
 import com.squareup.leakcanary.LeakCanary
 import org.koin.android.ext.android.startKoin
 import timber.log.Timber
@@ -16,6 +17,6 @@ class App: Application() {
         }
         LeakCanary.install(this)
         Timber.plant(Timber.DebugTree())
-        startKoin(this, listOf(getModule(this)))
+        startKoin(this, listOf(getModule(this), jsonMapperModule))
     }
 }
