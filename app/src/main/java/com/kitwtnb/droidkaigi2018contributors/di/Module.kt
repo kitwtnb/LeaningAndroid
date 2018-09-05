@@ -22,11 +22,6 @@ fun getModule(context: Context) = applicationContext {
     /**
      * Network
      */
-    provide<Moshi> {
-        Moshi.Builder()
-             .add(ApplicationJsonAdapterFactory)
-             .build()
-    }
     provide<OkHttpClient> {
         val logger = HttpLoggingInterceptor.Logger { Timber.tag("OkHttp").d(it) }
         val interceptor = HttpLoggingInterceptor(logger).apply {
