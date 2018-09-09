@@ -42,6 +42,7 @@ dependencies {
     // ===================  DI Container  ======================
     implementation depends.koin.android
     implementation depends.koin.architectureComponents
+    testImplementation depends.koin.test
 
     // ===================  Observer  ==========================
     implementation depends.rxjava2.core
@@ -72,6 +73,7 @@ dependencies {
     testImplementation depends.junit
     androidTestImplementation depends.supporttest.runner
     androidTestImplementation depends.supporttest.espresso
+    testImplementation depends.kotlinTest
 }
 
 // Leak Canary settings for unit tests.

@@ -22,7 +22,8 @@ ext {
             // ===================  DI Container  ======================
             koin: [
                     android:                "org.koin:koin-android:$versions.koin",
-                    architectureComponents: "org.koin:koin-android-architecture:$versions.koin"
+                    architectureComponents: "org.koin:koin-android-architecture:$versions.koin",
+                    test:                   "org.koin:koin-test:$versions.koin"
             ],
 
             // ===================  Observer  ==========================
@@ -64,5 +65,6 @@ ext {
                     runner:   "com.android.support.test:runner:$versions.supporttest.runner",
                     espresso: "com.android.support.test.espresso:espresso-core:$versions.supporttest.espresso",
             ],
+            kotlinTest: "io.kotlintest:kotlintest:$versions.kotlinTest"
     ]
 }
