@@ -1,7 +1,9 @@
 package com.kitwtnb.droidkaigi2018contributors.data
 
 import com.squareup.moshi.Json
+import se.ansman.kotshi.JsonSerializable
 
+@JsonSerializable
 data class Contributor(
         val login: String,
         val id: Int,
