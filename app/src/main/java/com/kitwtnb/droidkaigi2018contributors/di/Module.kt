@@ -7,14 +7,10 @@ import com.kitwtnb.droidkaigi2018contributors.ApplicationJsonAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.R
 import com.kitwtnb.droidkaigi2018contributors.MainViewModel
 import com.squareup.moshi.Moshi
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.applicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
-import timber.log.Timber
-import java.util.concurrent.TimeUnit
 
 fun getModule(context: Context) = applicationContext {
     viewModel { MainViewModel(get()) }
@@ -22,17 +18,12 @@ fun getModule(context: Context) = applicationContext {
     /**
      * Network
      */
-    provide<OkHttpClient> {
-        val logger = HttpLoggingInterceptor.Logger { Timber.tag("OkHttp").d(it) }
-        val interceptor = HttpLoggingInterceptor(logger).apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
-
-        OkHttpClient.Builder()
-                    .addInterceptor(interceptor)
-                    .readTimeout(30, TimeUnit.SECONDS)
-                    .build()
+    provide<Moshi> {
+        Moshi.Builder()
+             .add(ApplicationJsonAdapterFactory)
+             .build()
     }
+
     provide<Retrofit> {
         Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create(get()))
