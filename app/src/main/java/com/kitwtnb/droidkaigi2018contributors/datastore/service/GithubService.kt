@@ -1,6 +1,6 @@
-package com.kitwtnb.droidkaigi2018contributors.service
+package com.kitwtnb.droidkaigi2018contributors.datastore.service
 
-import com.kitwtnb.droidkaigi2018contributors.data.Contributor
+import com.kitwtnb.droidkaigi2018contributors.datastore.data.Contributor
 import kotlinx.coroutines.experimental.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Path

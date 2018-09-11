@@ -1,6 +1,6 @@
 package com.kitwtnb.droidkaigi2018contributors.di
 
-import com.kitwtnb.droidkaigi2018contributors.MainViewModel
+import com.kitwtnb.droidkaigi2018contributors.view.main.MainViewModel
 import org.koin.android.architecture.ext.viewModel
 import org.koin.dsl.module.applicationContext
 

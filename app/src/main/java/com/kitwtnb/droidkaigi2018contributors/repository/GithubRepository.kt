@@ -1,7 +1,7 @@
 package com.kitwtnb.droidkaigi2018contributors.repository
 
-import com.kitwtnb.droidkaigi2018contributors.data.Contributor
-import com.kitwtnb.droidkaigi2018contributors.service.GithubService
+import com.kitwtnb.droidkaigi2018contributors.datastore.data.Contributor
+import com.kitwtnb.droidkaigi2018contributors.datastore.service.GithubService
 import kotlinx.coroutines.experimental.Deferred
 
 interface GithubRepository {

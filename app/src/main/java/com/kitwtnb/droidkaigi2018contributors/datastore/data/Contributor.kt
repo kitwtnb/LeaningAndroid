@@ -1,4 +1,4 @@
-package com.kitwtnb.droidkaigi2018contributors.data
+package com.kitwtnb.droidkaigi2018contributors.datastore.data
 
 import com.squareup.moshi.Json
 import se.ansman.kotshi.JsonSerializable
