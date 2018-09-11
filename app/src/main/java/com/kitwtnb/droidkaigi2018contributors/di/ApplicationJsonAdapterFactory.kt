@@ -1,4 +1,4 @@
-package com.kitwtnb.droidkaigi2018contributors
+package com.kitwtnb.droidkaigi2018contributors.di
 
 import se.ansman.kotshi.KotshiJsonAdapterFactory
 

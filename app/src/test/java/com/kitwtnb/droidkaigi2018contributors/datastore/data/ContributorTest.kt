@@ -1,6 +1,6 @@
-package com.kitwtnb.droidkaigi2018contributors.data
+package com.kitwtnb.droidkaigi2018contributors.datastore.data
 
-import com.kitwtnb.droidkaigi2018contributors.di.jsonMapperModule
+import com.kitwtnb.droidkaigi2018contributors.di.dataStoreModule
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
@@ -18,7 +18,7 @@ class ContributorTest : KoinTest {
 
     @Before
     fun setup() {
-        startKoin(listOf(jsonMapperModule))
+        startKoin(listOf(dataStoreModule))
     }
 
     @After
