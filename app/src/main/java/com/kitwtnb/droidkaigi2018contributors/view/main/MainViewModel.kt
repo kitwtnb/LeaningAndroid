@@ -1,9 +1,10 @@
-package com.kitwtnb.droidkaigi2018contributors
+package com.kitwtnb.droidkaigi2018contributors.view.main
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
 import com.crashlytics.android.Crashlytics
+import com.kitwtnb.droidkaigi2018contributors.datastore.service.ApiService
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
