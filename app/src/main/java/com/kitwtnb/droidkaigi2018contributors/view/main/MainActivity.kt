@@ -1,4 +1,4 @@
-package com.kitwtnb.droidkaigi2018contributors
+package com.kitwtnb.droidkaigi2018contributors.view.main
 
 import android.content.Intent
 import android.databinding.DataBindingUtil
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
+import com.kitwtnb.droidkaigi2018contributors.R
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityMainBinding
 import org.koin.android.architecture.ext.viewModel
 

@@ -1,9 +1,8 @@
 package com.kitwtnb.droidkaigi2018contributors.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
-import com.kitwtnb.droidkaigi2018contributors.ApiService
-import com.kitwtnb.droidkaigi2018contributors.ApplicationJsonAdapterFactory
-import com.kitwtnb.droidkaigi2018contributors.service.GithubService
+import com.kitwtnb.droidkaigi2018contributors.datastore.service.ApiService
+import com.kitwtnb.droidkaigi2018contributors.datastore.service.GithubService
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
