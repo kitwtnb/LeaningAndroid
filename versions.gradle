@@ -18,8 +18,9 @@ ext {
 
             // ===================  Support Library  ===================
             support: [
-                    appcompat:  "26.1.0",
-                    constraint: "1.0.2",
+                    appcompat:    "26.1.0",
+                    constraint:   "1.0.2",
+                    recyclerView: "26.1.0",
             ],
 
             // ===================  DI Container  ======================
