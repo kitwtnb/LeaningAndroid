@@ -15,8 +15,9 @@ ext {
 
             // ===================  Support Library  ===================
             support: [
-                    appcompat:  "com.android.support:appcompat-v7:$versions.support.appcompat",
-                    constraint: "com.android.support.constraint:constraint-layout:$versions.support.constraint",
+                    appcompat:    "com.android.support:appcompat-v7:$versions.support.appcompat",
+                    constraint:   "com.android.support.constraint:constraint-layout:$versions.support.constraint",
+                    recyclerView: "com.android.support:recyclerview-v7:$versions.support.recyclerView",
             ],
 
             // ===================  DI Container  ======================
