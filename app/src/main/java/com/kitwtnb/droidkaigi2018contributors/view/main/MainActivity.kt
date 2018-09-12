@@ -9,6 +9,7 @@ import android.view.MenuItem
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import com.kitwtnb.droidkaigi2018contributors.R
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityMainBinding
+import com.kitwtnb.droidkaigi2018contributors.view.contributors.ContributorsActivity
 import org.koin.android.architecture.ext.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel
+
+        binding.showContributors.setOnClickListener {
+            ContributorsActivity.createIntent(this).let { startActivity(it) }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
