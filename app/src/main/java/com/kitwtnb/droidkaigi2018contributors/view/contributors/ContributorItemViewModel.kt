@@ -4,11 +4,11 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import com.kitwtnb.droidkaigi2018contributors.datastore.data.Contributor
 
-class ContributorItemViewModel(contributor: Contributor) {
+class ContributorItemViewModel {
     private val _name = MutableLiveData<String>()
     val name: LiveData<String> = _name
 
-    init {
+    fun setContributor(contributor: Contributor) {
         _name.value = contributor.login
     }
 }
