@@ -47,6 +47,7 @@ ext {
                     ossLicenses:             "0.9.1",
                     playServicesOssLicenses: "11.8.0",
             ],
+            picasso: "2.71828",
 
             // ===================  Debug  =============================
             crashlytics: "2.7.1",
