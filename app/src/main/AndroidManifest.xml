@@ -27,6 +27,7 @@
         <activity
             android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
             android:theme="@style/AppTheme.ActionBar" />
+        <activity android:name=".view.contributors.ContributorsActivity" />
     </application>
 
 </manifest>
