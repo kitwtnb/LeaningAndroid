@@ -39,6 +39,7 @@ dependencies {
     implementation depends.support.appcompat
     implementation depends.support.constraint
     implementation depends.support.recyclerView
+    implementation depends.support.cardView
 
     // ===================  DI Container  ======================
     implementation depends.koin.android
