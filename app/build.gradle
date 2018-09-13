@@ -63,6 +63,7 @@ dependencies {
     // ===================  UI  ================================
     implementation depends.playServicesOssLicenses
     implementation depends.picasso
+    implementation depends.circleImageView
 
     // ===================  Debug  =============================
     implementation(depends.crashlytics) {
