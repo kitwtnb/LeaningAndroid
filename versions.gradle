@@ -21,6 +21,7 @@ ext {
                     appcompat:    "26.1.0",
                     constraint:   "1.0.2",
                     recyclerView: "26.1.0",
+                    cardView: "26.1.0",
             ],
 
             // ===================  DI Container  ======================
@@ -46,6 +47,8 @@ ext {
                     ossLicenses:             "0.9.1",
                     playServicesOssLicenses: "11.8.0",
             ],
+            picasso:         "2.71828",
+            circleImageView: "2.2.0",
 
             // ===================  Debug  =============================
             crashlytics: "2.7.1",
