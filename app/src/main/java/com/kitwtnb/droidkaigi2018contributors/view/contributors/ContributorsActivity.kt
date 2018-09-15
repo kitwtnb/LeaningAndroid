@@ -24,13 +24,18 @@ class ContributorsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        binding.pullToRefresh.setOnRefreshListener { viewModel.onRefresh() }
         binding.contributors.let {
             it.layoutManager = GridLayoutManager(this, 2)
             it.adapter = ContributorAdapter()
         }
+
         viewModel.contributors.observeNonNull(this) {
             val adapter = binding.contributors.adapter as ContributorAdapter
             adapter.setContributors(it)
+        }
+        viewModel.isRefreshing.observeNonNull(this) {
+            binding.pullToRefresh.isRefreshing = it
         }
 
         viewModel.onCreate()
