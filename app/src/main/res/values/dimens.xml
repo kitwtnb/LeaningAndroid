@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="elevation_toolbar">4dp</dimen>
+
+    <dimen name="contributors_item_margin_vertical">10dp</dimen>
+    <dimen name="contributors_item_margin_horizontal">20dp</dimen>
+    <dimen name="contributors_item_icon_size">50dp</dimen>
+    <dimen name="contributors_item_icon_margin">20dp</dimen>
 </resources>
