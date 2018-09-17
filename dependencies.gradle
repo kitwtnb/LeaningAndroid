@@ -54,6 +54,11 @@ ext {
             playServicesOssLicenses: "com.google.android.gms:play-services-oss-licenses:$versions.gms.playServicesOssLicenses",
             picasso:                 "com.squareup.picasso:picasso:$versions.picasso",
             circleImageView:         "de.hdodenhof:circleimageview:$versions.circleImageView",
+            epoxy: [
+                    core: "com.airbnb.android:epoxy:$versions.epoxy",
+                    databinding: "com.airbnb.android:epoxy-databinding:$versions.epoxy",
+                    processor: "com.airbnb.android:epoxy-processor:$versions.epoxy",
+            ],
 
             // ===================  Debug  =============================
             crashlytics: "com.crashlytics.sdk.android:crashlytics:${versions.crashlytics}@aar",

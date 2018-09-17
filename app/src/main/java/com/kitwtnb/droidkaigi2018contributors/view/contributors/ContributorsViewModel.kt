@@ -13,13 +13,22 @@ class ContributorsViewModel(
         private val coroutineContext: CoroutineContext = CommonPool,
         private val showContributorsUseCase: ShowContributorsUseCase
 ) : ViewModel() {
-    private val _contributors = MutableLiveData<List<Contributor>>()
+    private val _contributors: MutableLiveData<List<Contributor>> = MutableLiveData()
     val contributors: LiveData<List<Contributor>> = _contributors
 
-    fun onCreate() {
+    private val _isRefreshing: MutableLiveData<Boolean> = MutableLiveData()
+    val isRefreshing: LiveData<Boolean> = _isRefreshing
+
+    fun onCreate() = showContributors()
+
+    fun onRefresh() = showContributors()
+
+    private fun showContributors() {
         launch(coroutineContext) {
+            _isRefreshing.value = true
             val contributors = showContributorsUseCase.showContributors()
             _contributors.value = contributors
+            _isRefreshing.value = false
         }
     }
 }

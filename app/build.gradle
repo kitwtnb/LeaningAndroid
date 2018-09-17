@@ -5,6 +5,10 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'io.fabric'
 apply plugin: 'com.google.gms.oss.licenses.plugin'
 
+kapt {
+    correctErrorTypes = true
+}
+
 android {
     compileSdkVersion versions.compileSdkVersion
     dataBinding.enabled = true
@@ -64,6 +68,9 @@ dependencies {
     implementation depends.playServicesOssLicenses
     implementation depends.picasso
     implementation depends.circleImageView
+    implementation depends.epoxy.core
+    implementation depends.epoxy.databinding
+    kapt depends.epoxy.processor
 
     // ===================  Debug  =============================
     implementation(depends.crashlytics) {
