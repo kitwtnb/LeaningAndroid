@@ -16,8 +16,12 @@
         tools:context="com.kitwtnb.droidkaigi2018contributors.view.main.MainActivity">
 
         <android.support.v7.widget.Toolbar
+            style="@style/Toolbar"
             android:id="@+id/toolbar"
-            style="@style/Toolbar" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
             android:id="@+id/text"
