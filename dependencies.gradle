@@ -16,9 +16,10 @@ ext {
             // ===================  Support Library  ===================
             support: [
                     appcompat:    "com.android.support:appcompat-v7:$versions.support.appcompat",
+                    design:       "com.android.support:design:$versions.support.design",
                     constraint:   "com.android.support.constraint:constraint-layout:$versions.support.constraint",
                     recyclerView: "com.android.support:recyclerview-v7:$versions.support.recyclerView",
-                    cardView: "com.android.support:cardview-v7:$versions.support.cardView",
+                    cardView:     "com.android.support:cardview-v7:$versions.support.cardView",
             ],
 
             // ===================  DI Container  ======================
