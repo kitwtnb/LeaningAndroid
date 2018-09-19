@@ -6,6 +6,7 @@ import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import android.view.MenuItem
 import com.kitwtnb.droidkaigi2018contributors.R
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityContributorsBinding
 import com.kitwtnb.droidkaigi2018contributors.ext.observeNonNull
@@ -26,6 +27,9 @@ class ContributorsActivity : AppCompatActivity() {
 
         val controller = ContributorController()
 
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         binding.pullToRefresh.setOnRefreshListener { viewModel.onRefresh() }
         binding.contributors.let {
             it.layoutManager = GridLayoutManager(this, 2)
@@ -40,5 +44,13 @@ class ContributorsActivity : AppCompatActivity() {
         }
 
         viewModel.onCreate()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        android.R.id.home -> {
+            finish()
+            true
+        }
+        else -> super.onOptionsItemSelected(item)
     }
 }
