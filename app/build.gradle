@@ -41,6 +41,7 @@ dependencies {
 
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
+    implementation depends.support.design
     implementation depends.support.constraint
     implementation depends.support.recyclerView
     implementation depends.support.cardView
