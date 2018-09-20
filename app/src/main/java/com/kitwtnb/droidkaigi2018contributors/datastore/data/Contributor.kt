@@ -1,11 +1,15 @@
 package com.kitwtnb.droidkaigi2018contributors.datastore.data
 
+import android.arch.persistence.room.Entity
+import android.arch.persistence.room.PrimaryKey
 import com.squareup.moshi.Json
 import se.ansman.kotshi.JsonSerializable
 
 @JsonSerializable
+@Entity
 data class Contributor(
         val login: String,
+        @PrimaryKey
         val id: Int,
         @Json(name = "node_id")
         val nodeId: String,
