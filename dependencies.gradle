@@ -10,7 +10,11 @@ ext {
 
             // ===================  Architecture Components  ===========
             architectureComponents: [
-                    extensions: "android.arch.lifecycle:extensions:$versions.architectureComponents"
+                    extensions: "android.arch.lifecycle:extensions:$versions.architectureComponents",
+                    room: [
+                            runtime:  "android.arch.persistence.room:runtime:$versions.architectureComponents",
+                            compiler: "android.arch.persistence.room:compiler:$versions.architectureComponents",
+                    ],
             ],
 
             // ===================  Support Library  ===================
