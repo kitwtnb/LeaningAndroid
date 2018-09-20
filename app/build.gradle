@@ -38,6 +38,8 @@ dependencies {
 
     // ===================  Architecture Components  ===========
     implementation depends.architectureComponents.extensions
+    implementation depends.architectureComponents.room.runtime
+    kapt depends.architectureComponents.room.compiler
 
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
