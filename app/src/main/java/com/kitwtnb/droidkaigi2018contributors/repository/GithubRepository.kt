@@ -4,13 +4,14 @@ import com.kitwtnb.droidkaigi2018contributors.datastore.data.Contributor
 import com.kitwtnb.droidkaigi2018contributors.datastore.db.ContributorDao
 import com.kitwtnb.droidkaigi2018contributors.datastore.db.deferredDelete
 import com.kitwtnb.droidkaigi2018contributors.datastore.db.deferredFetch
-import com.kitwtnb.droidkaigi2018contributors.datastore.db.deferredInsert
+import com.kitwtnb.droidkaigi2018contributors.datastore.db.deferredReplace
 import com.kitwtnb.droidkaigi2018contributors.datastore.service.GithubService
 import kotlinx.coroutines.experimental.Deferred
 import kotlinx.coroutines.experimental.async
 
 interface GithubRepository {
     suspend fun loadContributors(owner: String, repository: String): Deferred<List<Contributor>>
+    suspend fun refreshContributors(owner: String, repository: String): Deferred<List<Contributor>>
     suspend fun deleteContributors(): Deferred<Unit>
 }
 
@@ -24,8 +25,12 @@ class GithubRepositoryImpl(
             return async { cache }
         }
 
+        return refreshContributors(owner, repository)
+    }
+
+    override suspend fun refreshContributors(owner: String, repository: String): Deferred<List<Contributor>> {
         val contributors = service.contributors(owner, repository).await()
-        contributorDao.deferredInsert(contributors).await()
+        contributorDao.deferredReplace(contributors).await()
 
         return async { contributors }
     }
