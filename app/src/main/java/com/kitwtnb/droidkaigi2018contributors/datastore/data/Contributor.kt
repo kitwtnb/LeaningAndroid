@@ -1,15 +1,13 @@
 package com.kitwtnb.droidkaigi2018contributors.datastore.data
 
+import android.arch.persistence.room.Embedded
 import android.arch.persistence.room.Entity
-import android.arch.persistence.room.PrimaryKey
 import com.squareup.moshi.Json
 import se.ansman.kotshi.JsonSerializable
 
 @JsonSerializable
-@Entity
 data class Contributor(
         val login: String,
-        @PrimaryKey
         val id: Int,
         @Json(name = "node_id")
         val nodeId: String,
@@ -42,4 +40,15 @@ data class Contributor(
         @Json(name = "site_admin")
         val siteAdmin: Boolean,
         val contributions: Int
+)
+
+@Entity(
+        tableName = "contributor",
+        primaryKeys = arrayOf("owner", "repository", "id")
+)
+data class ContributorEntity(
+        val owner: String,
+        val repository: String,
+        @Embedded
+        val contributor: Contributor
 )
