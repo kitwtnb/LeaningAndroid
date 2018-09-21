@@ -8,7 +8,7 @@ import kotlinx.coroutines.experimental.async
 
 @Dao
 interface ContributorDao {
-    @Query("SELECT * FROM contributor")
+    @Query("SELECT * FROM contributor ORDER BY contributions DESC")
     fun fetch(): List<Contributor>
 
     @Insert
