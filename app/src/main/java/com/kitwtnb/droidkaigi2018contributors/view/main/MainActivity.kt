@@ -30,6 +30,8 @@ class MainActivity : AppCompatActivity() {
         binding.showContributors.setOnClickListener {
             ContributorsActivity.createIntent(this).let { startActivity(it) }
         }
+
+        viewModel.onCreate()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
