@@ -5,5 +5,5 @@ import com.kitwtnb.droidkaigi2018contributors.repository.GithubRepositoryImpl
 import org.koin.dsl.module.applicationContext
 
 val repositoryModule = applicationContext {
-    provide<GithubRepository> { GithubRepositoryImpl(get()) }
+    provide<GithubRepository> { GithubRepositoryImpl(get(), get()) }
 }
