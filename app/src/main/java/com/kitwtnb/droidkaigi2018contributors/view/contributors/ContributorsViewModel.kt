@@ -19,14 +19,14 @@ class ContributorsViewModel(
     private val _isRefreshing: MutableLiveData<Boolean> = MutableLiveData()
     val isRefreshing: LiveData<Boolean> = _isRefreshing
 
-    fun onCreate() = showContributors()
+    fun onCreate() = showContributors { showContributorsUseCase.showContributors() }
 
-    fun onRefresh() = showContributors()
+    fun onRefresh() = showContributors { showContributorsUseCase.refreshContributors() }
 
-    private fun showContributors() {
+    private fun showContributors(getContributorsFunction: suspend () -> List<Contributor>) {
         launch(coroutineContext) {
             _isRefreshing.value = true
-            val contributors = showContributorsUseCase.showContributors()
+            val contributors = getContributorsFunction()
             _contributors.value = contributors
             _isRefreshing.value = false
         }

@@ -1,11 +1,15 @@
 package com.kitwtnb.droidkaigi2018contributors.di
 
+import android.arch.persistence.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
+import com.kitwtnb.droidkaigi2018contributors.datastore.db.AppDataBase
+import com.kitwtnb.droidkaigi2018contributors.datastore.db.ContributorDao
 import com.kitwtnb.droidkaigi2018contributors.datastore.service.ApiService
 import com.kitwtnb.droidkaigi2018contributors.datastore.service.GithubService
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module.applicationContext
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -58,5 +62,13 @@ val dataStoreModule = applicationContext {
 
     provide<ApiService> {
         (get(provideForRandomUser) as Retrofit).create(ApiService::class.java)
+    }
+
+    provide<AppDataBase> {
+        Room.databaseBuilder(androidApplication(), AppDataBase::class.java, "sqlite.db").build()
+    }
+
+    provide<ContributorDao> {
+        (get() as AppDataBase).contributorDao()
     }
 }
