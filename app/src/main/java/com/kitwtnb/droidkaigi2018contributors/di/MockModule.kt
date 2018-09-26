@@ -8,13 +8,13 @@ import com.kitwtnb.droidkaigi2018contributors.datastore.db.ContributorDao
 import com.kitwtnb.droidkaigi2018contributors.datastore.service.ApiService
 import com.kitwtnb.droidkaigi2018contributors.datastore.service.GithubService
 import kotlinx.coroutines.experimental.Deferred
-import org.koin.dsl.module.applicationContext
+import org.koin.dsl.module.module
 import retrofit2.mock.MockRetrofit
 import retrofit2.mock.NetworkBehavior
 import java.util.concurrent.TimeUnit
 
-val mockModule = applicationContext {
-    provide<NetworkBehavior> {
+val mockModule = module {
+    single<NetworkBehavior> {
         NetworkBehavior.create().also {
             it.setDelay(100, TimeUnit.MILLISECONDS)
             it.setFailurePercent(0)
@@ -22,13 +22,13 @@ val mockModule = applicationContext {
         }
     }
 
-    provide<MockRetrofit> {
+    single<MockRetrofit> {
         MockRetrofit.Builder(get(DataStoreModule.PROVIDE_FOR_GITHUB))
                 .networkBehavior(get())
                 .build()
     }
 
-    provide<GithubService> {
+    single<GithubService> {
         val delegate = (get() as MockRetrofit).create(GithubService::class.java)
 
         object : GithubService {
@@ -38,7 +38,7 @@ val mockModule = applicationContext {
         }
     }
 
-    provide<ApiService> {
+    single<ApiService> {
         val delegate = (get() as MockRetrofit).create(ApiService::class.java)
 
         object : ApiService {
@@ -46,7 +46,7 @@ val mockModule = applicationContext {
         }
     }
 
-    provide<ContributorDao> {
+    single<ContributorDao> {
         object : ContributorDao {
             override fun fetchBy(owner: String, repository: String): List<ContributorEntity> = listOf()
             override fun insert(contributors: List<ContributorEntity>) { }

@@ -49,8 +49,9 @@ dependencies {
     implementation depends.support.cardView
 
     // ===================  DI Container  ======================
+    implementation depends.koin.core
     implementation depends.koin.android
-    implementation depends.koin.architectureComponents
+    implementation depends.koin.viewModel
     testImplementation depends.koin.test
 
     // ===================  Observer  ==========================
