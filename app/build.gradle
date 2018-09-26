@@ -66,6 +66,7 @@ dependencies {
     implementation depends.retrofit2.core
     implementation depends.retrofit2.adapterCoroutine
     implementation depends.retrofit2.converterMoshi
+    implementation depends.retrofit2.mock
 
     // ===================  UI  ================================
     implementation depends.playServicesOssLicenses
