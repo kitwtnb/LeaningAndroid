@@ -3,9 +3,6 @@ package com.kitwtnb.droidkaigi2018contributors.di
 import android.arch.persistence.room.Room
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import com.kitwtnb.droidkaigi2018contributors.datastore.db.AppDataBase
-import com.kitwtnb.droidkaigi2018contributors.datastore.db.ContributorDao
-import com.kitwtnb.droidkaigi2018contributors.datastore.service.ApiService
-import com.kitwtnb.droidkaigi2018contributors.datastore.service.GithubService
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -16,10 +13,12 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
-val dataStoreModule = applicationContext {
-    val provideForGithub = "github"
-    val provideForRandomUser = "random user"
+object DataStoreModule {
+    const val PROVIDE_FOR_GITHUB = "github"
+    const val PROVIDE_FOR_RANDOM_USER = "random user"
+}
 
+val dataStoreModule = applicationContext {
     provide<Moshi> {
         Moshi.Builder()
                 .add(ApplicationJsonAdapterFactory)
@@ -38,7 +37,7 @@ val dataStoreModule = applicationContext {
                 .build()
     }
 
-    provide<Retrofit>(provideForGithub) {
+    provide<Retrofit>(DataStoreModule.PROVIDE_FOR_GITHUB) {
         Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create(get()))
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -47,7 +46,7 @@ val dataStoreModule = applicationContext {
                 .build()
     }
 
-    provide<Retrofit>(provideForRandomUser) {
+    provide<Retrofit>(DataStoreModule.PROVIDE_FOR_RANDOM_USER) {
         Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create(get()))
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -56,19 +55,7 @@ val dataStoreModule = applicationContext {
                 .build()
     }
 
-    provide<GithubService> {
-        (get(provideForGithub) as Retrofit).create(GithubService::class.java)
-    }
-
-    provide<ApiService> {
-        (get(provideForRandomUser) as Retrofit).create(ApiService::class.java)
-    }
-
     provide<AppDataBase> {
         Room.databaseBuilder(androidApplication(), AppDataBase::class.java, "sqlite.db").build()
-    }
-
-    provide<ContributorDao> {
-        (get() as AppDataBase).contributorDao()
     }
 }
