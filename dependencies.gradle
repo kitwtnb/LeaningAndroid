@@ -53,6 +53,7 @@ ext {
                     core:             "com.squareup.retrofit2:retrofit:$versions.retrofit2.core",
                     adapterCoroutine: "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:$versions.retrofit2.adapterCoroutine",
                     converterMoshi:   "com.squareup.retrofit2:converter-moshi:$versions.retrofit2.core",
+                    mock:             "com.squareup.retrofit2:retrofit-mock:$versions.retrofit2.core",
             ],
 
             // ===================  UI  ================================
