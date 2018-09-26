@@ -1,8 +1,10 @@
 package com.kitwtnb.droidkaigi2018contributors
 
 import android.app.Application
+import com.kitwtnb.droidkaigi2018contributors.di.daoModule
 import com.kitwtnb.droidkaigi2018contributors.di.dataStoreModule
 import com.kitwtnb.droidkaigi2018contributors.di.repositoryModule
+import com.kitwtnb.droidkaigi2018contributors.di.serviceModule
 import com.kitwtnb.droidkaigi2018contributors.di.useCaseModule
 import com.kitwtnb.droidkaigi2018contributors.di.viewModelModule
 import com.squareup.leakcanary.LeakCanary
@@ -19,6 +21,13 @@ class App: Application() {
         }
         LeakCanary.install(this)
         Timber.plant(Timber.DebugTree())
-        startKoin(this, listOf(dataStoreModule, repositoryModule, useCaseModule, viewModelModule))
+        startKoin(this, listOf(
+                dataStoreModule,
+                serviceModule,
+                daoModule,
+                repositoryModule,
+                useCaseModule,
+                viewModelModule
+        ))
     }
 }
