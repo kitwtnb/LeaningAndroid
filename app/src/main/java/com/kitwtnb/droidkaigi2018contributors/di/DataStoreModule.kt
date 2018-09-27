@@ -7,7 +7,7 @@ import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidApplication
-import org.koin.dsl.module.applicationContext
+import org.koin.dsl.module.module
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import timber.log.Timber
@@ -18,14 +18,14 @@ object DataStoreModule {
     const val PROVIDE_FOR_RANDOM_USER = "random user"
 }
 
-val dataStoreModule = applicationContext {
-    provide<Moshi> {
+val dataStoreModule = module {
+    single<Moshi> {
         Moshi.Builder()
                 .add(ApplicationJsonAdapterFactory)
                 .build()
     }
 
-    provide<OkHttpClient> {
+    single<OkHttpClient> {
         val logger = HttpLoggingInterceptor.Logger { Timber.tag("OkHttp").d(it) }
         val interceptor = HttpLoggingInterceptor(logger).apply {
             level = HttpLoggingInterceptor.Level.BODY
@@ -37,7 +37,7 @@ val dataStoreModule = applicationContext {
                 .build()
     }
 
-    provide<Retrofit>(DataStoreModule.PROVIDE_FOR_GITHUB) {
+    single<Retrofit>(DataStoreModule.PROVIDE_FOR_GITHUB) {
         Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create(get()))
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -46,7 +46,7 @@ val dataStoreModule = applicationContext {
                 .build()
     }
 
-    provide<Retrofit>(DataStoreModule.PROVIDE_FOR_RANDOM_USER) {
+    single<Retrofit>(DataStoreModule.PROVIDE_FOR_RANDOM_USER) {
         Retrofit.Builder()
                 .addConverterFactory(MoshiConverterFactory.create(get()))
                 .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -55,7 +55,7 @@ val dataStoreModule = applicationContext {
                 .build()
     }
 
-    provide<AppDataBase> {
+    single<AppDataBase> {
         Room.databaseBuilder(androidApplication(), AppDataBase::class.java, "sqlite.db").build()
     }
 }
