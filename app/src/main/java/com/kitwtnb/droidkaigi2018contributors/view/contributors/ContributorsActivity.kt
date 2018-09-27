@@ -10,14 +10,14 @@ import android.view.MenuItem
 import com.kitwtnb.droidkaigi2018contributors.R
 import com.kitwtnb.droidkaigi2018contributors.databinding.ActivityContributorsBinding
 import com.kitwtnb.droidkaigi2018contributors.ext.observeNonNull
-import org.koin.android.ext.android.inject
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class ContributorsActivity : AppCompatActivity() {
     companion object {
         fun createIntent(context: Context) = Intent(context, ContributorsActivity::class.java)
     }
 
-    private val viewModel: ContributorsViewModel by inject()
+    private val viewModel: ContributorsViewModel by viewModel()
     private val binding: ActivityContributorsBinding by lazy {
         DataBindingUtil.setContentView<ActivityContributorsBinding>(this, R.layout.activity_contributors)
     }
