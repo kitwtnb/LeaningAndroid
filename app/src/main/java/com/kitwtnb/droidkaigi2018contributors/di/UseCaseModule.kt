@@ -5,8 +5,9 @@ import com.kitwtnb.droidkaigi2018contributors.usecase.DeleteCacheUseCaseImpl
 import com.kitwtnb.droidkaigi2018contributors.usecase.ShowContributorsUseCase
 import com.kitwtnb.droidkaigi2018contributors.usecase.ShowContributorsUseCaseImpl
 import org.koin.dsl.module.module
+import org.koin.experimental.builder.singleBy
 
 val useCaseModule = module {
-    single<ShowContributorsUseCase> { ShowContributorsUseCaseImpl(get()) }
-    single<DeleteCacheUseCase> { DeleteCacheUseCaseImpl(get()) }
+    singleBy<ShowContributorsUseCase, ShowContributorsUseCaseImpl>()
+    singleBy<DeleteCacheUseCase, DeleteCacheUseCaseImpl>()
 }
