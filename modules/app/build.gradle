@@ -39,8 +39,6 @@ dependencies {
 
     // ===================  Architecture Components  ===========
     implementation depends.architectureComponents.extensions
-    implementation depends.architectureComponents.room.runtime
-    kapt depends.architectureComponents.room.compiler
 
     // ===================  Support Library  ===================
     implementation depends.support.appcompat
@@ -59,16 +57,6 @@ dependencies {
     implementation depends.rxjava2.core
     implementation depends.rxjava2.kotlin
     implementation depends.rxjava2.android
-
-    // ===================  Network  ===========================
-    implementation depends.kotshi.api
-    kapt depends.kotshi.compiler
-    implementation depends.okhttp.core
-    implementation depends.okhttp.loggingInterceptor
-    implementation depends.retrofit2.core
-    implementation depends.retrofit2.adapterCoroutine
-    implementation depends.retrofit2.converterMoshi
-    implementation depends.retrofit2.mock
 
     // ===================  UI  ================================
     implementation depends.playServicesOssLicenses
