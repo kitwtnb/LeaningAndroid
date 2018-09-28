@@ -32,7 +32,8 @@ dependencies {
     // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(":datastore")
-    implementation project(":repository") // todo reference to only module
+    implementation project(":repository")
+    implementation project(":usecase") // todo reference to only module
     implementation depends.firebase
     implementation depends.kotlin
     implementation depends.coroutine.core
