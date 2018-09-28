@@ -51,4 +51,10 @@ dependencies {
 
     // ===================  Debug  =============================
     implementation depends.timber
+
+    // ===================  Test  ==============================
+    testImplementation depends.junit
+    androidTestImplementation depends.supporttest.runner
+    androidTestImplementation depends.supporttest.espresso
+    testImplementation depends.kotlinTest
 }
