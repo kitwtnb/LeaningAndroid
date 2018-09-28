@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion versions.compileSdkVersion
@@ -20,5 +23,16 @@ android {
 }
 
 dependencies {
+    // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":datastore")
+    implementation depends.kotlin
+    implementation depends.coroutine.core
+    implementation depends.coroutine.android
+
+    // ===================  DI Container  ======================
+    implementation depends.koin.core
+    implementation depends.koin.android
+    implementation depends.koin.viewModel
+    testImplementation depends.koin.test
 }
