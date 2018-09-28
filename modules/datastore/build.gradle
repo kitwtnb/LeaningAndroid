@@ -33,6 +33,12 @@ dependencies {
     implementation depends.architectureComponents.room.runtime
     kapt depends.architectureComponents.room.compiler
 
+    // ===================  DI Container  ======================
+    implementation depends.koin.core
+    implementation depends.koin.android
+    implementation depends.koin.viewModel
+    testImplementation depends.koin.test
+
     // ===================  Network  ===========================
     implementation depends.kotshi.api
     kapt depends.kotshi.compiler
@@ -42,4 +48,7 @@ dependencies {
     implementation depends.retrofit2.adapterCoroutine
     implementation depends.retrofit2.converterMoshi
     implementation depends.retrofit2.mock
+
+    // ===================  Debug  =============================
+    implementation depends.timber
 }
