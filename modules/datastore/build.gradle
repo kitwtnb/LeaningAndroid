@@ -26,6 +26,8 @@ dependencies {
     // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation depends.kotlin
+    implementation depends.coroutine.core
+    implementation depends.coroutine.android
 
     // ===================  Architecture Components  ===========
     implementation depends.architectureComponents.room.runtime
@@ -34,4 +36,10 @@ dependencies {
     // ===================  Network  ===========================
     implementation depends.kotshi.api
     kapt depends.kotshi.compiler
+    implementation depends.okhttp.core
+    implementation depends.okhttp.loggingInterceptor
+    implementation depends.retrofit2.core
+    implementation depends.retrofit2.adapterCoroutine
+    implementation depends.retrofit2.converterMoshi
+    implementation depends.retrofit2.mock
 }
