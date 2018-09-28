@@ -31,6 +31,7 @@ android {
 dependencies {
     // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(":datastore")
     implementation depends.firebase
     implementation depends.kotlin
     implementation depends.coroutine.core

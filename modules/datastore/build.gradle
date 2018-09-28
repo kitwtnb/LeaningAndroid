@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion versions.compileSdkVersion
@@ -20,5 +23,15 @@ android {
 }
 
 dependencies {
+    // ===================  Application  =======================
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation depends.kotlin
+
+    // ===================  Architecture Components  ===========
+    implementation depends.architectureComponents.room.runtime
+    kapt depends.architectureComponents.room.compiler
+
+    // ===================  Network  ===========================
+    implementation depends.kotshi.api
+    kapt depends.kotshi.compiler
 }
