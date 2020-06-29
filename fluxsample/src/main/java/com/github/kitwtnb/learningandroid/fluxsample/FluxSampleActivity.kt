@@ -25,9 +25,7 @@ class FluxSampleActivity : AppCompatActivity() {
         setContentView(R.layout.activity_flux_sample)
 
         add_value_button.setOnClickListener {
-            lifecycleScope.launch {
-                actionCreator.add(1)
-            }
+            actionCreator.add(1)
         }
 
         lifecycleScope.launch {

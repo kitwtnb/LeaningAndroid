@@ -11,7 +11,7 @@ class SampleActionCreator(
     private val dispatcher: Dispatcher,
     private val coroutineScope: CoroutineScope
 ) {
-    suspend fun add(value: Int) {
+    fun add(value: Int) {
         coroutineScope.launch {
             dispatcher.dispatch(SampleAction.Add(value))
         }
