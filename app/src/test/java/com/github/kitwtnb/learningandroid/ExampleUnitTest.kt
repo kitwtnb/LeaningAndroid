@@ -1,4 +1,4 @@
-package com.kitwtnb.droidkaigi2018contributors
+package com.github.kitwtnb.learningandroid
 
 import org.junit.Test
 

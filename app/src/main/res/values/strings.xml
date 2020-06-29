@@ -1,6 +1,3 @@
 <resources>
-    <string name="app_name">DroidKaigi2018Contributors</string>
-    <string name="service_url">http://randomuser.me/</string>
-
-    <string name="contributors_title">Contributors</string>
+    <string name="app_name">LearningAndroid</string>
 </resources>
